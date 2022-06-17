@@ -30,25 +30,25 @@ const PLUGINS = [
 ];
 
 function scss() {
-  return src(PATH.scssFile).
-    pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)).
-    pipe(postcss(PLUGINS)).
-    pipe(dest(PATH.cssFolder)).
-    pipe(browserSync.stream());
+  return src(PATH.scssFile)
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+      .pipe(postcss(PLUGINS))
+      .pipe(dest(PATH.cssFolder))
+      .pipe(browserSync.stream());
 }
 
 function scssDev() {
-  return src(PATH.scssFile, {sourcemaps: true}).
-    pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)).
-    pipe(postcss(PLUGINS)).
-    pipe(dest(PATH.cssFolder, {sourcemaps: true})).
-    pipe(browserSync.stream());
+  return src(PATH.scssFile, {sourcemaps: true})
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+      .pipe(postcss([mqpacker({sort: sortCSSmq})]))
+      .pipe(dest(PATH.cssFolder, {sourcemaps: true}))
+      .pipe(browserSync.stream());
 }
 
 function comb() {
-  return src(PATH.scssFiles).
-    pipe(csscomb()).
-    pipe(dest(PATH.scssFolder));
+  return src(PATH.scssFiles)
+      .pipe(csscomb())
+      .pipe(dest(PATH.scssFolder));
 }
 
 function syncInit() {
@@ -70,7 +70,15 @@ function watchFiles() {
   // watch(PATH.cssFiles, sync);
 }
 
+function watchDevFiles() {
+  syncInit();
+  watch(PATH.scssFiles, series(scssDev));
+  watch(PATH.htmlFiles, sync);
+  watch(PATH.jsFiles, sync);
+}
+
 task('comb', series(comb));
 task('scss', series(scss));
 task('dev', series(scssDev));
 task('watch', watchFiles);
+task('watchDev', watchDevFiles);
