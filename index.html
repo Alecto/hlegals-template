@@ -2,13 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
   <title>Document</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Header</h1>
-  <script src="./assets/js/main.js"></script>
+<header class="page-header">
+  <div class="container">
+    <div class="page-header__grid">
+      <div class="page-header__logo logo">
+        <img alt="Site logo" class="logo__image" src="assets/img/LogoMin.svg">
+      </div>
+      <nav class="page-header__menu menu">
+        <div class="menu__btn">
+          <span class="menu__btn-row"></span>
+          <span class="menu__btn-row"></span>
+          <span class="menu__btn-row"></span>
+        </div>
+        <ul class="menu__list">
+          <li class="menu__item"><a class="menu__link" href="">про нас</a></li>
+          <li class="menu__item"><a class="menu__link" href="">послуги</a></li>
+          <li class="menu__item"><a class="menu__link" href="">команда</a></li>
+          <li class="menu__item"><a class="menu__link" href="">публікації</a></li>
+          <li class="menu__item"><a class="menu__link" href="">контакти</a></li>
+        </ul>
+      </nav>
+      <nav class="page-header__actions actions">
+        <div class="actions__languages">
+          <a class="actions__languages-ua active" href="">УК</a>
+          <a class="actions__languages-ru" href="">РУ</a>
+          <a class="actions__languages-en" href="">EN</a>
+        </div>
+        <div class="actions__location">
+          <a class="actions__location-url" href="">Одеса, Адміральський пр., 3</a>
+        </div>
+        <div class="actions__phone">
+          <a class="actions__phone-url" href="tel:+380503901591">+38 (050) 390 15 91</a>
+        </div>
+        <div class="actions__socials">
+          <a class="actions__socials-url" href="">
+            <img class="actions__socials-image" src="assets/img/Facebook.svg">
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="page-header__content content">
+      <img alt="" class="page-header__content-image" src="assets/img/SymbolLongLeg.svg">
+      <h1 class="page-header__content-title">системний адміністратор правових рішень</h1>
+    </div>
+    <div class="page-header__button">
+      <img alt="scroll" class="page-header__button-image" src="assets/img/ScrollDown.svg">
+    </div>
+    <div class="page-header__overlay"></div>
+  </div>
+</header>
+
+<script src="./assets/js/main.js"></script>
 </body>
 </html>

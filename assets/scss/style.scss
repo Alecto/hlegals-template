@@ -1,7 +1,5 @@
 @use "../../node_modules/normalize.css/normalize";
 
-@use "presets" as *;
 @use "common";
 
-
-
+@use "pages/home/header";
