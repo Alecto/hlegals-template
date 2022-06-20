@@ -3,136 +3,108 @@
 
 .page-header {
   position: relative;
+
   background-color: $color-primary;
 
   &__grid {
-    @extend %container;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+
     display: grid;
-    grid-template-areas: "logo actions" "logo menu";
-    grid-template-columns: auto 1fr;
+
+    @extend %container;
     gap: $gap;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    grid-template-columns: auto 1fr;
+    @include sm-min {
+      padding-top: 50px;
+
+      grid-template-areas: "logo actions" "logo menu";
+    }
+    @include sm {
+      padding-top: $gap;
+
+      grid-template-areas: "actions actions" "logo menu";
+    }
   }
 
-  &__menu {
-  }
-
-  &__actions {
+  &__logo {
+    grid-area: logo;
   }
 
   &__content {
-    overflow: hidden;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
     position: relative;
     z-index: 1;
+
+    display: flex;
+    overflow: hidden;
+    align-items: flex-end;
+    justify-content: center;
+
+    min-height: 100vh;
+
     @extend %container;
 
     &-image {
-      margin-top: 120px;
+      margin-top: 200px;
     }
 
     &-title {
-      text-align: center;
-      color: $color-white;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 38px;
-      line-height: 45px;
+
       width: 100%;
       max-width: 620px;
-      font-weight: 500;
       margin: 0;
+
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      color: $color-white;
+
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 45px;
     }
   }
 
   &__button {
     position: absolute;
+    z-index: 2;
     bottom: $gap;
     left: 50%;
+
     transform: translateX(-50%);
-    z-index: 2
   }
 
   &__overlay {
     background: linear-gradient($bg-gradient);
-    @include abs-position;
 
-    &::before {
-      content: "";
-      @include abs-position;
-      background-image: url(../img/Frame2.svg);
-      background-repeat: no-repeat;
-      background-position: 50% 100%;
-      background-size: 85vh;
+    @include abs-position;
+    @include sm-min {
+      &::before {
+        content: "";
+
+        background-image: url(../img/Frame2.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        background-size: 85vh;
+
+        @include abs-position;
+      }
     }
 
     &::after {
-      content: "";
-      background: linear-gradient(to top, $color-primary 0%, transparent 100%);
-      @include abs-position(70%);
       z-index: 1;
-    }
-  }
-}
 
-.logo {
-  grid-area: logo;
-}
+      content: "";
 
-.menu {
-  grid-area: menu;
-  font-size: 1.125rem;
+      background: linear-gradient(to top, $color-primary 0%, transparent 100%);
 
-  &__btn {
-    display: none;
-  }
-
-  &__list {
-    @include unlist;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
-  }
-}
-
-.actions {
-  grid-area: actions;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 25px;
-
-  &__phone-url {
-    font-weight: 700;
-  }
-
-  &__languages {
-    display: flex;
-    gap: 2px;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 14px;
-
-    &-item {
-      display: block;
-      padding: 6px 7px 4px 5px;
-      border-radius: 8px;
-
-      &.active {
-        background-color: $color-accent;
-      }
+      @include abs-position(70%);
     }
   }
 }
