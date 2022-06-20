@@ -9,7 +9,10 @@ const sortCSSmq = require('sort-css-media-queries');
 
 const PATH = {
   scssFolder: './assets/scss/',
-  scssFiles: './assets/scss/**/*.scss',
+  scssFiles: [
+      './assets/scss/**/*.scss',
+      '!./assets/scss/presets**/*.scss'
+  ],
   scssFile: './assets/scss/style.scss',
   cssFolder: './assets/css/',
   cssFiles: './assets/css/*.css',
