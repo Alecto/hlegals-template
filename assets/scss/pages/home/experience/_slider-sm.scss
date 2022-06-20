@@ -1,0 +1,61 @@
+@use "../../../presets/index" as *;
+@use "../../../mixins/index" as *;
+
+.slider-sm {
+  color: $color-white;
+
+  @include md-min {
+    display: none;
+  }
+
+  &__note {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    cursor: pointer;
+    user-select: none;
+    width: min-content;
+
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @extend %text-liner-gradient;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.45;
+    margin-bottom: $gap;
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  &__indicator {
+    $size: 16px;
+
+    width: $size;
+    height: $size;
+    background-color: $color-active;
+    opacity: 0.2;
+    border-radius: $size * 0.5;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

@@ -2,6 +2,10 @@
 
 @use "common";
 
-@use "pages/home/header";
-@use "pages/home/menu";
-@use "pages/home/actions";
+@use "pages/home/header/header";
+@use "pages/home/header/menu";
+@use "pages/home/header/actions";
+
+@use "pages/home/experience/experience";
+@use "pages/home/experience/slider-lg";
+@use "pages/home/experience/slider-sm";
