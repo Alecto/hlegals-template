@@ -6,8 +6,6 @@
 
   font-size: 1.125rem;
 
-  grid-area: menu;
-
   &__btn {
     position: relative;
 
@@ -72,12 +70,13 @@
   }
 
   &__list {
-    gap: 15px;
     @include unlist;
     @include sm-min {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
+      gap: 15px;
     }
     @include sm {
       position: absolute;

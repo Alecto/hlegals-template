@@ -5,7 +5,7 @@ $sm: 768px;
 $xs: 576px;
 
 $gap: 20px;
-$gap-sm: 20px * 0.5;
+$gap-sm: $gap * 0.5;
 
 $font-size: 16px;
 $font-primary: "TT Norms", sans-serif;
