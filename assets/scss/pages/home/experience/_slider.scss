@@ -49,7 +49,6 @@ $size: 16px;
     color: $color-gray-text;
 
     font-weight: 700;
-    line-height: 1.2;
 
     @include md-min {
       text-align: right;
@@ -114,8 +113,6 @@ $size: 16px;
 
   &__title {
     margin-bottom: $gap;
-
-    line-height: 1.2;
 
     @include md-min {
       font-size: 32px;
