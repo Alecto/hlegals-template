@@ -1,10 +1,5 @@
 @use "../../node_modules/normalize.css/normalize";
 
 @use "common";
-
-@use "pages/home/header/header";
-@use "pages/home/header/menu";
-@use "pages/home/header/actions";
-
-@use "pages/home/experience/experience";
-@use "pages/home/experience/slider";
+@use "pages/home/header";
+@use "pages/home/experience";

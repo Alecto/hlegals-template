@@ -23,33 +23,31 @@
     line-height: 14px;
 
     gap: 2px;
+  }
 
-    &-item {
-      display: block;
+  &__language-link {
+    display: block;
 
-      padding: 6px 7px 4px 5px;
+    padding: 6px 7px 4px 5px;
 
-      border-radius: 8px;
+    border-radius: 8px;
 
-      &.active {
-        color: $color-white;
-        background-color: $color-accent;
-      }
+    &.active {
+      color: $color-white;
+      background-color: $color-accent;
     }
   }
 
-  &__location {
+  &__locations {
     @include sm {
       display: none;
     }
   }
 
-  &__phone {
-    &-url {
-      white-space: nowrap;
+  &__phone-link {
+    white-space: nowrap;
 
-      font-weight: 700;
-    }
+    font-weight: 700;
   }
 
   &__socials {
