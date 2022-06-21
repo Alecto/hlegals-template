@@ -9,9 +9,10 @@ const sortCSSmq = require('sort-css-media-queries');
 
 const PATH = {
   scssFolder: './assets/scss/',
-  scssFiles: [
-      './assets/scss/**/*.scss',
-      '!./assets/scss/presets**/*.scss'
+  scssFiles: './assets/scss/**/*.scss',
+  scssFilesWithoutPresets: [
+    './assets/scss/**/*.scss',
+    '!./assets/scss/presets**/*.scss'
   ],
   scssFile: './assets/scss/style.scss',
   cssFolder: './assets/css/',
@@ -49,7 +50,7 @@ function scssDev() {
 }
 
 function comb() {
-  return src(PATH.scssFiles)
+  return src(PATH.scssFilesWithoutPresets)
       .pipe(csscomb())
       .pipe(dest(PATH.scssFolder));
 }

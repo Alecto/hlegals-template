@@ -72,14 +72,38 @@
   }
 
   &__list {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
     gap: 15px;
     @include unlist;
+    @include sm-min {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
     @include sm {
+      position: absolute;
+      top: 0;
+      right: -$mobile-menu-size;
+
       display: none;
+
+      width: $mobile-menu-size;
+      height: 100vh;
+      padding: $gap;
+
+      background-color: $color-primary;
+      box-shadow: -5px 0 5px rgba($color-black, 0.5);
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+
+    @include sm {
+      margin: $gap 0;
     }
   }
 }
