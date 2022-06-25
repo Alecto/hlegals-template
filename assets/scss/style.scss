@@ -1,13 +1,6 @@
-@use "presets" as *;
+@use "../../node_modules/normalize.css/normalize";
+
 @use "common";
-
-body {
-  background-color: $color-primary;
-  color: $color-accent;
-}
-
-div {
-  width: $ul;
-  padding-left: $gap;
-  padding-right: $gap;
-}
+@use "pages/home/header";
+@use "pages/home/experience";
+@use "pages/home/services";

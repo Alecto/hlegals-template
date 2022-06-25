@@ -2,13 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
   <title>Document</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Header</h1>
-  <script src="./assets/js/main.js"></script>
+
+<header class="page-header">
+  <div class="page-header__grid">
+    <div class="page-header__logo">
+      <img alt="Site logo" class="page-header__logo-image" src="assets/img/LogoMin.svg">
+    </div>
+    <nav class="page-header__menu menu">
+      <div class="menu__btn">
+        <span class="menu__btn-row"></span>
+        <span class="menu__btn-row"></span>
+        <span class="menu__btn-row"></span>
+      </div>
+      <ul class="menu__list">
+        <li class="menu__item"><a class="menu__link" href="">про нас</a></li>
+        <li class="menu__item"><a class="menu__link" href="">послуги</a></li>
+        <li class="menu__item"><a class="menu__link" href="">команда</a></li>
+        <li class="menu__item"><a class="menu__link" href="">публікації</a></li>
+        <li class="menu__item"><a class="menu__link" href="">контакти</a></li>
+      </ul>
+    </nav>
+    <nav class="page-header__actions actions">
+      <div class="actions__languages">
+        <a class="actions__language-link active" href="">УК</a>
+        <a class="actions__language-link" href="">РУ</a>
+        <a class="actions__language-link" href="">EN</a>
+      </div>
+      <div class="actions__locations">
+        <a class="actions__location-link" href="">Одеса, Адміральський пр., 3</a>
+      </div>
+      <div class="actions__phones">
+        <a class="actions__phone-link" href="tel:+380503901591">+38 (050) 390 15 91</a>
+      </div>
+      <div class="actions__socials">
+        <a class="actions__social-link" href="">
+          <img class="actions__social-image" src="assets/img/Facebook.svg">
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div class="page-header__content">
+    <img alt="" class="page-header__content-image" src="assets/img/SymbolLongLeg.svg">
+    <h1 class="page-header__content-title">системний адміністратор правових рішень</h1>
+  </div>
+  <div class="page-header__button">
+    <img alt="scroll" class="page-header__button-image" src="assets/img/ScrollDown.svg">
+  </div>
+</header>
+
+<main class="page-main">
+
+  <section class="experience">
+    <div class="experience__container">
+
+      <div class="slider">
+
+        <div class="slider__headers">
+          <h2 class="slider__header active">Послідовні</h2>
+          <h2 class="slider__header">Клієнтоорієнтовані</h2>
+          <h2 class="slider__header">Інноваційні</h2>
+          <h2 class="slider__header">Бізнес-орієнтовані юристи</h2>
+        </div>
+
+        <div class="slider__notes">
+          <div class="slider__note active">
+            <h3 class="slider__title">Перевертаємо уявлення про юридичні послуги</h3>
+            <p class="slider__description">Консолідуючи багаторічний досвід і практику, юристи компанії супроводжують
+              складні проекти і досягають прийняття ряду важливих для галузі рішень. Багато з них формують практику
+              застосування морського права в Україні.</p>
+          </div>
+          <div class="slider__note">
+            <h3 class="slider__title">Клієнти про юридичні послуги</h3>
+            <p class="slider__description">Юристи компанії супроводжують складні проекти і досягають прийняття ряду
+              важливих для галузі рішень. Багато з них формують практику застосування морського права в Україні.</p>
+          </div>
+
+          <div class="slider__note">
+            <h3 class="slider__title">Інновіції юридичні послуги</h3>
+            <p class="slider__description">Досвід і практику, юристи компанії супроводжують
+              складні проекти і досягають прийняття ряду важливих для галузі рішень. Багато з них формують практику
+              застосування морського права в Україні.</p>
+          </div>
+
+          <div class="slider__note">
+            <h3 class="slider__title">Бізнес про юридичні послуги</h3>
+            <p class="slider__description">Супроводжують складні проекти і досягають прийняття ряду важливих для
+              галузі рішень. Багато з них формують практику застосування морського права в Україні.</p>
+          </div>
+        </div>
+
+        <div class="slider__indicators">
+          <div class="slider__indicator active"></div>
+          <div class="slider__indicator"></div>
+          <div class="slider__indicator"></div>
+          <div class="slider__indicator"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services__container">
+      <div>
+        <strong><a class="services__page-link" href="">послуги</a></strong>
+      </div>
+      <h2 class="services__title">Що ми вміємо робити краще за інших?</h2>
+      <div class="services__grid">
+        <div class="service-item">
+          <div class="service-item__icon"><img alt="icon" class="service-item__image" src="assets/img/Icon1.svg"></div>
+          <h3 class="service-item__title">IT та електронна комерція</h3>
+          <div class="service-item__description">
+            Нескінчений потік договорів, податкові питання, трудові відносини, корпоративні папери — юридична робота
+            відволікає вас від ведення бізнесу. Але роботи не так вже й багато, щоб наймати інхауз-юриста.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-item__icon"><img alt="icon" class="service-item__image" src="assets/img/Icon2.svg"></div>
+          <h3 class="service-item__title">Комплексний щоденний юридичний супровід</h3>
+          <div class="service-item__description">
+            До того ж, з часом робота стане однотипною і нецікавою для штатного юриста. А ще ми добре знаємо, як важко в
+            Україні знайти хорошого кандидата з досвідом у сфері інформаційних технологій.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-item__icon"><img alt="icon" class="service-item__image" src="assets/img/Icon3.svg"></div>
+          <h3 class="service-item__title">Структуризація корпоративних відносин</h3>
+          <div class="service-item__description">
+            Замість просто надавати юридичні послуги, ми закріпимо юриста або цілу команду, які впишуться в повсякденне
+            життя вашої компанії.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-item__icon"><img alt="icon" class="service-item__image" src="assets/img/Icon4.svg"></div>
+          <h3 class="service-item__title">Побудовa договірних відносин</h3>
+          <div class="service-item__description">
+            Раз на тиждень, чи тиждень на місяць у вас під боком є ваш власний юрист. Будь-хто в компанії може впіймати
+            його біля кавоварки і просто поговорити про поточні справи замість очікування статусу update.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-item__icon"><img alt="icon" class="service-item__image" src="assets/img/Icon5.svg"></div>
+          <h3 class="service-item__title">Захист бізнесу, інтелектуальної власності</h3>
+          <div class="service-item__description">
+            А весь інший час він працюватиме над новими різноплановими проектами, тому вже точно не зупиниться в
+            професійному розвитку. Так чи інакше, на вас працюватиме весь Axon Partners замість корпоративного юриста.
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-item__icon"><img alt="icon" class="service-item__image" src="assets/img/Icon6.svg"></div>
+          <h3 class="service-item__title">Судове представництво</h3>
+          <div class="service-item__description">
+            Невелика компанія, середнього розміру, чи вже лідер ринку? Локальний бізнес або транснаціональна компанія?
+            Маєте власний юридичний відділ, чи ні?
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team"></section>
+  <section class="cases"></section>
+  <section class="clients"></section>
+  <section class="publications"></section>
+
+  <br><br><br><br><br><br><br><br><br><br>
+
+</main>
+
+<footer class="page-footer"></footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

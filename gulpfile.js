@@ -10,6 +10,10 @@ const sortCSSmq = require('sort-css-media-queries');
 const PATH = {
   scssFolder: './assets/scss/',
   scssFiles: './assets/scss/**/*.scss',
+  scssFilesWithoutPresets: [
+    './assets/scss/**/*.scss',
+    '!./assets/scss/presets**/*.scss'
+  ],
   scssFile: './assets/scss/style.scss',
   cssFolder: './assets/css/',
   cssFiles: './assets/css/*.css',
@@ -30,25 +34,25 @@ const PLUGINS = [
 ];
 
 function scss() {
-  return src(PATH.scssFile).
-    pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)).
-    pipe(postcss(PLUGINS)).
-    pipe(dest(PATH.cssFolder)).
-    pipe(browserSync.stream());
+  return src(PATH.scssFile)
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+      .pipe(postcss(PLUGINS))
+      .pipe(dest(PATH.cssFolder))
+      .pipe(browserSync.stream());
 }
 
 function scssDev() {
-  return src(PATH.scssFile, {sourcemaps: true}).
-    pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)).
-    pipe(postcss(PLUGINS)).
-    pipe(dest(PATH.cssFolder, {sourcemaps: true})).
-    pipe(browserSync.stream());
+  return src(PATH.scssFile, {sourcemaps: true})
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+      .pipe(postcss([mqpacker({sort: sortCSSmq})]))
+      .pipe(dest(PATH.cssFolder, {sourcemaps: true}))
+      .pipe(browserSync.stream());
 }
 
 function comb() {
-  return src(PATH.scssFiles).
-    pipe(csscomb()).
-    pipe(dest(PATH.scssFolder));
+  return src(PATH.scssFilesWithoutPresets)
+      .pipe(csscomb())
+      .pipe(dest(PATH.scssFolder));
 }
 
 function syncInit() {
@@ -70,7 +74,15 @@ function watchFiles() {
   // watch(PATH.cssFiles, sync);
 }
 
+function watchDevFiles() {
+  syncInit();
+  watch(PATH.scssFiles, series(scssDev));
+  watch(PATH.htmlFiles, sync);
+  watch(PATH.jsFiles, sync);
+}
+
 task('comb', series(comb));
 task('scss', series(scss));
 task('dev', series(scssDev));
 task('watch', watchFiles);
+task('watchDev', watchDevFiles);
