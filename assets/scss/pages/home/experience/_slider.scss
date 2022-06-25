@@ -5,15 +5,11 @@ $size: 16px;
 .slider {
   display: flex;
 
-  color: $color-white;
-
   @include md-min {
     gap: 80px;
   }
   @include md {
     flex-direction: column;
-
-    gap: 0;
   }
 
   &__headers {
@@ -43,7 +39,6 @@ $size: 16px;
   &__header {
     position: relative;
 
-    cursor: pointer;
     user-select: none;
 
     color: $color-gray-text;
@@ -95,6 +90,8 @@ $size: 16px;
     align-items: center;
     flex-basis: 0;
     flex-grow: 3;
+
+    color: $color-white;
   }
 
   &__note {
